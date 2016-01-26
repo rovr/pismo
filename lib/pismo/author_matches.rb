@@ -29,5 +29,6 @@ AUTHOR_MATCHES = [
   'cite a',
   'cite',
   '.contributor_details h4 a',
-  '.meta a'
+  '.meta a',
+  '.lia-user-name-link span'
 ]
