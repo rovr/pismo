@@ -1,6 +1,7 @@
 # encoding: utf-8
 require 'pismo/internal_attributes'
 require 'pismo/external_attributes'
+require 'rest-client'
 
 module Pismo
 
@@ -35,7 +36,7 @@ module Pismo
       @url = handle if handle =~ /\Ahttp/i
 
       @html = if handle =~ /\Ahttp/i
-                open(handle) { |f| f.read }
+                RestClient.get(handle)
               elsif handle.is_a?(StringIO) || handle.is_a?(IO) || handle.is_a?(Tempfile)
                 handle.read
               else
